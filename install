@@ -1,0 +1,20 @@
+#!/bin/bash
+
+absolute-path() {
+  (cd "$1" && pwd)
+}
+
+relative-path() {
+  local targetDir="$(absolute-path "$1")"
+  local pivotDir="$(absolute-path "$2")"
+  echo "${targetDir#$pivotDir/}"
+}
+
+relativeDir="$(relative-path "$(dirname "$0")" "$HOME")"
+
+
+test -d ~/.dot-files || \
+  ln -s $relativeDir ~/.dot-files
+
+grep "source ~/.dot-files/bashrc" ~/.bashrc &>/dev/null || \
+  echo "source ~/.dot-files/bashrc" >> ~/.bashrc
