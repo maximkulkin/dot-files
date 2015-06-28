@@ -30,4 +30,9 @@ alias grm="git rebase master"
 alias gcont="git rebase --continue"
 alias gabort="git rebase --abort"
 
+gri() {
+  local base=${1:-master}
+  git rebase -i $(git merge-base $base HEAD)
+}
+
 alias json="python -mjson.tool"
