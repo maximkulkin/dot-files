@@ -16,6 +16,7 @@ alias ls="ls -GF"
 alias ga="git add"
 alias gs="git status"
 alias gb="git branch"
+alias gbr='git for-each-ref --sort="-authordate:iso8601" --format="%(color:green)%(authordate:iso8601)%09%(color:white)%(refname:short)" refs/heads'
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gc="git commit"
