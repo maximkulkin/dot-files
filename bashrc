@@ -1,6 +1,8 @@
 source ~/.dot-files/git-prompt.sh
 source ~/.dot-files/git-completion.bash
 
+export PATH="~/.dot-files/bin:$PATH"
+
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;34m\]\w\[\033[32m\]$(__git_ps1)\[\033[1;33m\] >\[\033[00m\] '
 if [ "$USER" == "vagrant" ]; then
