@@ -40,3 +40,13 @@ gri() {
 }
 
 alias json="python -mjson.tool"
+
+if [[ $(uname) == "Darwin" ]]; then
+  docker() {
+    if [[ -z "$DOCKER_HOST" ]]; then
+      eval $(docker-machine env default)
+    fi
+
+    command docker "$@"
+  }
+fi
