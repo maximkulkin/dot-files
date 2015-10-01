@@ -34,6 +34,17 @@ alias grm="git rebase master"
 alias gcont="git rebase --continue"
 alias gabort="git rebase --abort"
 
+__git_complete ga _git_add
+__git_complete gb _git_branch
+__git_complete go _git_checkout
+__git_complete gl _git_log
+__git_complete glm _git_log
+__git_complete glmo _git_log
+__git_complete gu _git_pull
+__git_complete gd _git_diff
+__git_complete gdc _git_diff
+__git_complete gc _git_commit
+
 gri() {
   local base=${1:-master}
   git rebase -i $(git merge-base $base HEAD)
