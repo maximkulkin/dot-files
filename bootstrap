@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Install Homebrew (http://brew.sh)
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew doctor
+
+# Install Homebrew Cask (http://caskroom.io)
+brew install caskroom/cask/brew-cask
+
+brew install wget
+brew install git
+
+brew cask install virtualbox
+brew cask install vagrant
+
+brew cask install slack
+brew cask install skype
+
+# Checkout and install various configs
+mkdir ~/Projects
+cd ~/Projects
+git clone http://github.com/maximkulkin/dot-files
+dot-files/install
+
+# Checkout and install vim-configs
+git clone http://github.com/maximkulkin/vim-configs
+vim-configs/install
