@@ -61,6 +61,7 @@ alias json="python -mjson.tool"
 if [[ $(uname) == "Darwin" ]]; then
   docker() {
     if [[ -z "$DOCKER_HOST" ]]; then
+      echo "DOCKER_HOST is not set, initializing docker machine 'default'"
       eval $(docker-machine env default)
     fi
 
