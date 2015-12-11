@@ -16,12 +16,15 @@ alias ls="ls -GF"
 
 # Git aliases
 alias ga="git add"
+alias gap="git add -p"
 alias gs="git status"
 alias gb="git branch"
 alias gbr='git for-each-ref --sort="-authordate:iso8601" --format="%(color:green)%(authordate:iso8601)%09%(color:white)%(refname:short)" refs/heads'
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gc="git commit"
+alias gca="git commit --amend"
+alias gcf="git commit --fixup"
 alias go="git checkout"
 alias gom="git checkout master"
 alias gfo="git fetch origin"
@@ -35,6 +38,7 @@ alias gcont="git rebase --continue"
 alias gabort="git rebase --abort"
 
 __git_complete ga _git_add
+__git_complete gap _git_add
 __git_complete gb _git_branch
 __git_complete go _git_checkout
 __git_complete gl _git_log
@@ -44,6 +48,8 @@ __git_complete gu _git_pull
 __git_complete gd _git_diff
 __git_complete gdc _git_diff
 __git_complete gc _git_commit
+__git_complete gca _git_commit
+__git_complete gcf _git_commit
 
 gri() {
   local base=${1:-master}
