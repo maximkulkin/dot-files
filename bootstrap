@@ -18,12 +18,16 @@ brew cask install slack
 brew cask install skype
 brew cask install google-chrome
 
-# Checkout and install various configs
-mkdir ~/Projects
+mkdir -p ~/Projects
 cd ~/Projects
-git clone http://github.com/maximkulkin/dot-files
-dot-files/install
+# Checkout and install various configs
+if [ ! -d dot-files ]; then
+  git clone http://github.com/maximkulkin/dot-files
+  dot-files/install
+fi
 
 # Checkout and install vim-configs
-git clone http://github.com/maximkulkin/vim-configs
-vim-configs/install
+if [ ! -d vim-configs ]; then
+  git clone http://github.com/maximkulkin/vim-configs
+  vim-configs/install
+fi
