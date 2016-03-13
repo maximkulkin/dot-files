@@ -33,6 +33,7 @@ alias gp!="git push origin"
 alias gl="git log"
 alias glm="git log master.."
 alias glmo="git log master.. --oneline"
+alias glo="git log --oneline"
 alias grm="git rebase master"
 alias gcont="git rebase --continue"
 alias gabort="git rebase --abort"
@@ -44,6 +45,7 @@ __git_complete go _git_checkout
 __git_complete gl _git_log
 __git_complete glm _git_log
 __git_complete glmo _git_log
+__git_complete glo _git_log
 __git_complete gu _git_pull
 __git_complete gd _git_diff
 __git_complete gdc _git_diff

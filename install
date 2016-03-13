@@ -12,12 +12,24 @@ relative-path() {
 
 relativeDir="$(relative-path "$(dirname "$0")" "$HOME")"
 
-
+# Configure bash
 test -d ~/.dot-files || \
   ln -s $relativeDir ~/.dot-files
 
 grep "source ~/.dot-files/bashrc" ~/.bashrc &>/dev/null || \
   echo "source ~/.dot-files/bashrc" >> ~/.bashrc
+echo -e "\nsource ~/.bashrc" >> ~/.bash_profile
 
+# Configure tmux
 test -e ~/.tmux.conf || \
   ln -s $relativeDir/tmux.conf ~/.tmux.conf
+
+# Configure Git
+ln -s $relativeDir/gitignore ~/.gitignore
+
+git config --global user.name "Maxim Kulkin"
+git config --global user.email "maxim.kulkin@gmail.com"
+git config --global push.default simple
+git config --global rerere.enabled true
+git config --global rebase.autosquash true
+git config --global core.excludesFile ~/.gitignore
