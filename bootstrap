@@ -28,6 +28,9 @@ if [ ! -d dot-files ]; then
   dot-files/install
 fi
 
+# Install custom font
+cp ~/Projects/dot-files/Monaco\ for\ Powerline.otf ~/Library/Fonts
+
 # Checkout and install vim-configs
 if [ ! -d vim-configs ]; then
   git clone http://github.com/maximkulkin/vim-configs
