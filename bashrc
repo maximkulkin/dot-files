@@ -70,3 +70,5 @@ if [[ $(uname) == "Darwin" ]]; then
     command docker "$@"
   }
 fi
+
+alias v=vagrant
