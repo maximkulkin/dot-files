@@ -24,7 +24,7 @@ mkdir -p ~/Projects
 cd ~/Projects
 # Checkout and install various configs
 if [ ! -d dot-files ]; then
-  git clone http://github.com/maximkulkin/dot-files
+  git clone git@github.com:maximkulkin/dot-files.git
   dot-files/install
 fi
 
@@ -33,6 +33,6 @@ cp ~/Projects/dot-files/Monaco\ for\ Powerline.otf ~/Library/Fonts
 
 # Checkout and install vim-configs
 if [ ! -d vim-configs ]; then
-  git clone http://github.com/maximkulkin/vim-configs
+  git clone git@github.com:maximkulkin/vim-configs.git
   vim-configs/install
 fi
