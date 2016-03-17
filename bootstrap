@@ -20,6 +20,9 @@ brew cask install google-chrome
 # VPN software
 brew cask install viscosity
 
+# Any application shortcut override tool
+brew cask install spark
+
 mkdir -p ~/Projects
 cd ~/Projects
 # Checkout and install various configs
