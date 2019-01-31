@@ -37,6 +37,10 @@ alias glo="git log --oneline"
 alias grm="git rebase master"
 alias gcont="git rebase --continue"
 alias gabort="git rebase --abort"
+alias gss="git stash save"
+alias gsp="git stash pop"
+alias gsl="git stash list"
+alias gsh="git stash show -u"
 
 __git_complete ga _git_add
 __git_complete gap _git_add
