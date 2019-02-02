@@ -11,17 +11,10 @@ brew install caskroom/cask/brew-cask
 brew install wget
 brew install git
 
-brew cask install virtualbox
-brew cask install vagrant
-
 brew cask install slack
 brew cask install skype
+brew cask install telegram-desktop
 brew cask install google-chrome
-# VPN software
-brew cask install viscosity
-
-# Any application shortcut override tool
-brew cask install spark
 
 mkdir -p ~/Projects
 cd ~/Projects
@@ -39,3 +32,5 @@ if [ ! -d vim-configs ]; then
   git clone git@github.com:maximkulkin/vim-configs.git
   vim-configs/install
 fi
+
+echo "Do not forget to install Terminal.app Pro profile"
