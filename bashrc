@@ -12,7 +12,7 @@ fi
 export EDITOR=vim
 alias e="vim"
 
-alias ls="ls -GF"
+alias ls="ls --color -GF"
 
 # Git aliases
 alias ga="git add"
