@@ -67,3 +67,7 @@ alias json="python -mjson.tool"
 docker-run() {
   docker run -it --rm -v $(pwd):/project -w /project "$@"
 }
+
+xdocker-run() {
+  x-docker run -it --rm -v $(pwd):/project -w /project "$@"
+}
