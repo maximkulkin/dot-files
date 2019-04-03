@@ -64,4 +64,6 @@ gri() {
 
 alias json="python -mjson.tool"
 
-alias v=vagrant
+docker-run() {
+  docker run -it --rm -v $(pwd):/project -w /project "$@"
+}
