@@ -36,7 +36,10 @@ git config --global user.email "maxim.kulkin@gmail.com"
 git config --global push.default simple
 git config --global rerere.enabled true
 git config --global rebase.autosquash true
+git config --global rebase.updateRefs true
 git config --global core.excludesFile ~/.gitignore
+git config --global init.defaultBranch master
+git config --global diff.algorithm histogram
 
 # Configure kitty
 mkdir -p ~/.config/kitty
