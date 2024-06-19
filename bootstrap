@@ -5,16 +5,12 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 brew doctor
 
-# Install Homebrew Cask (http://caskroom.io)
-brew install caskroom/cask/brew-cask
-
 brew install wget
 brew install git
 
-brew cask install slack
-brew cask install skype
-brew cask install telegram-desktop
-brew cask install google-chrome
+brew install slack
+brew install skype
+brew install telegram-desktop
 
 mkdir -p ~/Projects
 cd ~/Projects
