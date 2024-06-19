@@ -33,3 +33,8 @@ git config --global push.default simple
 git config --global rerere.enabled true
 git config --global rebase.autosquash true
 git config --global core.excludesFile ~/.gitignore
+
+# Configure kitty
+mkdir -p ~/.config/kitty
+ln -s $relativeDir/kitty.conf ~/.config/kitty/kitty.conf
+
