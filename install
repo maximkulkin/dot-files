@@ -16,9 +16,8 @@ relativeDir="$(relative-path "$(dirname "$0")" "$HOME")"
 test -d ~/.dot-files || \
   ln -s $relativeDir ~/.dot-files
 
-grep "source ~/.dot-files/bashrc" ~/.bashrc &>/dev/null || \
-  echo "source ~/.dot-files/bashrc" >> ~/.bashrc
-echo -e "\nsource ~/.bashrc" >> ~/.bash_profile
+grep "source ~/.dot-files/zshrc" ~/.zshrc &>/dev/null || \
+  echo "source ~/.dot-files/zshrc" >> ~/.zshrc
 
 # Configure tmux
 test -e ~/.tmux.conf || \
