@@ -108,3 +108,15 @@ alias idf-fm="idf flash monitor"
 
 source <(fzf --zsh)
 zinit light ~/.dot-files/third-party/fzf-tab
+
+hide-desktop() {
+  # On macOS hides icons on desktop
+  defaults write com.apple.finder CreateDesktop false
+  killall Finder
+}
+
+show-desktop() {
+  # On macOS shows (previously hidden) icons on desktop
+  defaults write com.apple.finder CreateDesktop true
+  killall Finder
+}
