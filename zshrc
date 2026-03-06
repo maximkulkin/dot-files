@@ -112,6 +112,10 @@ zinit light Aloxaf/fzf-tab
 export HOMEBREW_NO_ENV_HINTS=1
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
 hide-desktop() {
   # On macOS hides icons on desktop
   defaults write com.apple.finder CreateDesktop false
