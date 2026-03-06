@@ -107,7 +107,7 @@ alias idf-b="idf build"
 alias idf-fm="idf flash monitor"
 
 source <(fzf --zsh)
-zinit light ~/.dot-files/third-party/fzf-tab
+zinit light Aloxaf/fzf-tab
 
 hide-desktop() {
   # On macOS hides icons on desktop
