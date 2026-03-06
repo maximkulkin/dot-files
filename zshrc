@@ -109,6 +109,9 @@ alias idf-fm="idf flash monitor"
 source <(fzf --zsh)
 zinit light Aloxaf/fzf-tab
 
+export HOMEBREW_NO_ENV_HINTS=1
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 hide-desktop() {
   # On macOS hides icons on desktop
   defaults write com.apple.finder CreateDesktop false
