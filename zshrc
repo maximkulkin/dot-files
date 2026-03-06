@@ -17,6 +17,9 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 # To accept autosuggest press Ctrl+f
 
+zinit ice as"program" pick"bin/git-fuzzy"
+zinit light bigH/git-fuzzy
+
 # Load completions
 autoload -U compinit && compinit
 
