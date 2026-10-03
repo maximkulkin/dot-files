@@ -41,6 +41,8 @@ bindkey '^n' history-search-forward
 
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' expand prefix suffix
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias ga="git add"
