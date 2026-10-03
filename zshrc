@@ -114,6 +114,7 @@ export EDITOR=nvim
 alias vim=nvim
 alias e=nvim
 alias ec="( cd ~/.config/nvim && nvim )"
+alias c=claude
 
 docker-run() {
   docker run -it --rm -v $(pwd):/project -w /project "$@"
