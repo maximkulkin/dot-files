@@ -47,7 +47,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias ga="git add"
 alias gap="git add -p"
-alias gs="git status"
+alias gs="git status --short"
 alias gb="git branch"
 alias gbr='git for-each-ref --sort="-authordate:iso8601" --format="%(color:green)%(authordate:iso8601)%09%(color:white)%(refname:short)" refs/heads'
 alias gd="git diff"
@@ -61,10 +61,7 @@ alias gfo="git fetch origin"
 alias gu="git pull --rebase"
 alias gp!="git push origin"
 alias gl="git log"
-alias glm="git log master.."
-alias glmo="git log master.. --oneline"
 alias glo="git log --oneline"
-alias grm="git rebase master"
 alias gcont="git rebase --continue"
 alias gabort="git rebase --abort"
 alias gss="git stash save"
@@ -72,10 +69,36 @@ alias gsp="git stash pop"
 alias gsl="git stash list"
 alias gsh="git stash show -u"
 alias gsmu="git submodule update --init --recursive"
+alias ge='e $(git diff --name-only --diff-filter=U)'
+
+_git_find_master_branch() {
+  for b in master main; do
+    if [ -n "$(git branch --list $b)" ]; then
+      echo $b
+      return 0
+    fi
+  done
+  if [ -z "$branch" ]; then
+    echo "Failed to determine master branch" 1>&2
+    return 1
+  fi
+}
+
+glm() {
+  git log "$(_git_find_master_branch).." "$@"
+}
+
+glmo() {
+  git log "$(_git_find_master_branch).." --oneline "$@"
+}
+
+grm() {
+  git rebase "$(_git_find_master_branch)" "$@"
+}
 
 gri() {
-  local base=${1:-master}
-  git rebase -i $(git merge-base $base HEAD)
+  local base=${1:-$(_git_find_master_branch)}
+  git rebase -i $(git merge-base "$base" HEAD)
 }
 
 alias ls="ls -FG"
