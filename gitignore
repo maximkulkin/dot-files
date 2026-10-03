@@ -1,5 +1,6 @@
 # Vim swap files
 *.swp
 *.swo
+.python-version
 .DS_Store
 __pycache__
