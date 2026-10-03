@@ -36,3 +36,5 @@ if [ ! -d vim-configs ]; then
   git clone git@github.com:maximkulkin/vim-configs.git
   vim-configs/install
 fi
+
+brew install --cask claude-code
