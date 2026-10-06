@@ -157,3 +157,30 @@ show-desktop() {
   defaults write com.apple.finder CreateDesktop true
   killall Finder
 }
+
+# Disbale Claude Code mouse click/drag capture (keep scrolling)
+# export CLAUDE_CODE_DISABLE_MOUSE_CLICKS=1
+
+# Create a widget to fuzzy-select and foreground a background job
+fzf-jobs-widget() {
+  if [[ -z "$(jobs)" ]]; then
+    zle -M "No background jobs found."
+    return
+  fi
+
+  local selected_job
+  # List jobs, pass to fzf, and extract the job ID (e.g. %1)
+  selected_job=$(jobs | fzf --ansi --no-sort --reverse --height ~40% | awk -F'[][]' '{print "%" $2}')
+
+  if [[ -n "$selected_job" ]]; then
+    # Insert 'fg %1' into the command line buffer and run it
+    BUFFER="fg $selected_job"
+    zle accept-line
+  fi
+}
+
+# Register function as ZLE widget
+zle -N fzf-jobs-widget
+
+# Bind widget to Ctrl+J
+bindkey '^J' fzf-jobs-widget
