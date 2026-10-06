@@ -136,7 +136,8 @@ alias idf=idf.py
 alias idf-b="idf build"
 alias idf-fm="idf flash monitor"
 
-source <(fzf --zsh)
+# source <(fzf --zsh)
+source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 zinit light Aloxaf/fzf-tab
 
 export HOMEBREW_NO_ENV_HINTS=1
